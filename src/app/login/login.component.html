@@ -1,0 +1,28 @@
+<div class="row justify-content-center align-items-center">
+  <form class="col-6" *ngIf="mostrar">
+    <div class="form-group">
+      <input type="text" class="form-control" (input)="capturarUsuario($event.target.value)" placeholder="Usuario">
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" (input)="capturarContrasena($event.target.value)"
+        placeholder="Contraseña">
+    </div>
+    <div>
+      <button type="button" class="btn btn-success" (click)="ingresar()">Ingresar</button>
+      <button class="btn btn-primary" (click)="mostrar=!mostrar">Registrar</button>
+    </div>
+  </form>
+  <form class="col-6" *ngIf="!mostrar">
+    <div class="form-group">
+      <input type="text" class="form-control" (input)="capturarUsuario($event.target.value)" placeholder="Usuario">
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" (input)="capturarContrasena($event.target.value)"
+        placeholder="Contraseña">
+    </div>
+    <div>
+      <button type="button" class="btn btn-primary" (click)="mostrar=!mostrar">Login</button>
+      <button type="button" class="btn btn-success" (click)="ingresar()">Registrar</button>
+    </div>
+  </form>
+</div>
